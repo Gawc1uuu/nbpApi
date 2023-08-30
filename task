@@ -1,0 +1,28 @@
+        //Stwórz jsona z samochodem, samochod ma marke, model, pojemnosc silnika, info czy ma turbo oraz liste wyposazen
+        //wyposazenie ma nazwe i cene
+
+        //Stwórz 3 jsony z informacjami o autach, nastepnie wcyztaj je i wrzuc na liste i znajdz najdrozsze auto (na podstawie wyspoazenia)
+
+        //Stwórz obiekt samochod i zapisz go do formatu json
+
+
+                /*
+                    Stworz klase ksiazka ktora ma autora, tytul, kategorie, cene.
+                    STworz kilka obiektów i zapisz je jako json nody a nastepnie zapisz je jako plik jsonowy.
+                    Wczytaj nastepnie ktoras ksiazke jako obiekt i wyswietl jej wartosci
+                 */
+
+
+                   // http://api.nbp.pl/api/exchangerates/rates/c/usd/2016-04-04/?format=json
+
+                         //  http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/?format=json
+
+                         /*
+                             napisz srwis dla kursow, przykladowe metody:
+                             co lepiej byloby kupic od daty do daty (na cyzm bysmy lepiej zarobili, np czy euro czy dolary)
+                             znalezc najwiekszy kurs w zakresie dat np dla euro czy dolara
+                             znalezc srednia srednich kursow GBP
+                             znalezx max i min sredni kurs GBP
+
+                             rozwinac apke: )
+                          */

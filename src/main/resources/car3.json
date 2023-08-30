@@ -1,0 +1,20 @@
+{
+  "brand": "Audi",
+  "model": "A5",
+  "engineCapacity": 2.0,
+  "turbocharged": true,
+  "equipmentList": [
+    {
+      "name": "Leather Seats",
+      "price": 7500
+    },
+    {
+      "name": "Headup Display",
+      "price": 800
+    },
+    {
+      "name": "Sport Wheels",
+      "price": 20000
+    }
+  ]
+}

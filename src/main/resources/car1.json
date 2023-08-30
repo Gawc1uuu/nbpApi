@@ -1,0 +1,20 @@
+{
+  "brand": "Toyota",
+  "model": "Camry",
+  "engineCapacity": 2.5,
+  "turbocharged": false,
+  "equipmentList": [
+    {
+      "name": "Leather Seats",
+      "price": 1200
+    },
+    {
+      "name": "Navigation System",
+      "price": 800
+    },
+    {
+      "name": "Sunroof",
+      "price": 600
+    }
+  ]
+}
