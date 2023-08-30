@@ -1,5 +1,6 @@
 package nbp.task;
 
+import nbp.task.service.AdditionalCurrencyService;
 import nbp.task.service.CurrencyService;
 import nbp.task.service.NbpApiService;
 
@@ -32,5 +33,11 @@ public class Main {
 //        System.out.println(service.findAverageOfAverageGBPRates(10));
 //        System.out.println(service.findMaxOfAverageGBPRates(10));
 //        System.out.println(service.findMinOfAverageGBPRates(10));
+
+        AdditionalCurrencyService additionalCurrencyService = new AdditionalCurrencyService();
+
+        System.out.println(additionalCurrencyService.isTodayGoodDayToBuyUSD("https://api.nbp.pl/api/exchangerates/rates/c/usd/today/?format=json"));
+        System.out.println(additionalCurrencyService.isTodayGoodDayToSellUSD("https://api.nbp.pl/api/exchangerates/rates/c/usd/today/?format=json"));
+        System.out.println(additionalCurrencyService.isAverageGBPMidRateFrom10DaysBiggerThanTodaysRate("http://api.nbp.pl/api/exchangerates/rates/a/gbp/today/?format=json"));
     }
 }
