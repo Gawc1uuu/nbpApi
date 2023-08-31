@@ -26,3 +26,6 @@
 
                              rozwinac apke: )
                           */
+
+                                  // Stwórz klase Person (name, surname, age) i uzyj serializerow i deserializerow do odczytu i zapisu.
+                                  // name = imie, surname = nazwisko age= wiek

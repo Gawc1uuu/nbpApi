@@ -1,4 +1,4 @@
-package pl.kurs.nbp.exceptions;
+package nbp.task.task.nbp.exceptions;
 
 public class CannotExtractDataFromResponseBodyException extends RuntimeException {
     public CannotExtractDataFromResponseBodyException() {

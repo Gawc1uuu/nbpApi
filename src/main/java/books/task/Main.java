@@ -4,6 +4,7 @@ import books.task.model.Book;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import pl.kurs.model.Car;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -50,5 +51,7 @@ public class Main {
         mapper.writeValue(new File(PATH + "books.json"), new ArrayList<JsonNode>(Arrays.asList(j1, j2, j3)));
         List<Book> books = mapper.readValue(new File(PATH + "books.json"), List.class);
         System.out.println(books.get(1));
+
+
     }
 }

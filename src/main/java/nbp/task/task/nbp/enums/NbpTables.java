@@ -1,4 +1,4 @@
-package pl.kurs.nbp.enums;
+package nbp.task.task.nbp.enums;
 
 public enum NbpTables {
     A("a"), B("b"), C("c");

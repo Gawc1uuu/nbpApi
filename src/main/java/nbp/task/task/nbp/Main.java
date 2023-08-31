@@ -1,6 +1,6 @@
-package pl.kurs.nbp;
+package nbp.task.task.nbp;
 
-import pl.kurs.nbp.services.CurrencyService;
+import nbp.task.task.nbp.services.CurrencyService;
 
 import java.io.IOException;
 import java.time.LocalDate;

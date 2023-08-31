@@ -1,4 +1,4 @@
-package pl.kurs.nbp.enums;
+package nbp.task.task.nbp.enums;
 
 public enum Currency {
     USD("usd"), GBP("gbp"), EUR("eur");

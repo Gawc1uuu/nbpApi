@@ -1,7 +1,9 @@
 package pl.kurs.nbp.services;
 
-import pl.kurs.nbp.enums.Currency;
-import pl.kurs.nbp.exceptions.EmptyListException;
+import nbp.task.task.nbp.enums.Currency;
+import nbp.task.task.nbp.exceptions.EmptyListException;
+import nbp.task.task.nbp.services.CurrencyService;
+import nbp.task.task.nbp.services.NbpApiService;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;

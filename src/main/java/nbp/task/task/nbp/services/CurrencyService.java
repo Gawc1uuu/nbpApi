@@ -1,7 +1,7 @@
-package pl.kurs.nbp.services;
+package nbp.task.task.nbp.services;
 
-import pl.kurs.nbp.exceptions.EmptyListException;
-import pl.kurs.nbp.enums.Currency;
+import nbp.task.task.nbp.enums.Currency;
+import nbp.task.task.nbp.exceptions.EmptyListException;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -31,7 +31,7 @@ public class CurrencyService {
     }
 
     public double findMinOfAverageGBPRates(int numberOfDays) {
-        List<Double> list = nbpApiService.getListOfRates(Currency.GBP.getCode(), numberOfDays);
+        List<Double> list = nbpApiService.getListOfRates(nbp.task.task.nbp.enums.Currency.GBP.getCode(), numberOfDays);
         return Optional.ofNullable(list)
                 .orElseGet(Collections::emptyList)
                 .stream()
@@ -42,7 +42,7 @@ public class CurrencyService {
     }
 
     public double findMaxOfAverageGBPRates(int numberOfDays) {
-        List<Double> list = nbpApiService.getListOfRates(Currency.GBP.getCode(), numberOfDays);
+        List<Double> list = nbpApiService.getListOfRates(nbp.task.task.nbp.enums.Currency.GBP.getCode(), numberOfDays);
         return Optional.ofNullable(list)
                 .orElseGet(Collections::emptyList)
                 .stream()

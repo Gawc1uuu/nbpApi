@@ -2,7 +2,8 @@
   "firstName": "Adam",
   "lastName": "Nowak",
   "age": 33,
-  "married": true,
+  "isMarried": true,
+  "isWise" : false,
   "hobbies": [
     "motoryzacja",
     "sport"

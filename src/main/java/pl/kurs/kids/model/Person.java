@@ -1,7 +1,22 @@
 package pl.kurs.kids.model;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Locale;
+
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+
+@JsonTypeInfo( include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.CLASS)
 public class Person {
     private String firstName;
     private String lastName;
@@ -10,51 +25,8 @@ public class Person {
     private List<String> hobbies;
     private List<Kid> kids;
 
-    public Person() {
-    }
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private LocalDate birthday;
 
-    public Person(String firstName, String lastName, int age, boolean isMarried, List<String> hobbies, List<Kid> kids) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.isMarried = isMarried;
-        this.hobbies = hobbies;
-        this.kids = kids;
-    }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public boolean getIsMarried() {
-        return isMarried;
-    }
-
-    public List<String> getHobbies() {
-        return hobbies;
-    }
-
-    public List<Kid> getKids() {
-        return kids;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", isMarried=" + isMarried +
-                ", hobbies=" + hobbies +
-                ", kids=" + kids +
-                '}';
-    }
 }

@@ -1,1 +1,1 @@
-{"firstName":"Jan","lastName":"Kowalski","age":41,"married":false,"hobbies":["znaczki","sport"],"kids":[{"firstName":"Franek","lastName":"Kowalski","age":3}]}
+{"pl.kurs.kids.model.Person":{"firstName":"Jan","lastName":"Kowalski","age":50,"isMarried":false,"hobbies":["pilka nozna","znaczki"],"kids":[{"firstName":"Krzys","lastName":"Kowalski","age":5},{"firstName":"Lukasz","lastName":"Kowalski","age":6}],"birthday":"31-08-2023"}}

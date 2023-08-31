@@ -1,15 +1,15 @@
-package pl.kurs.nbp.services;
+package nbp.task.task.nbp.services;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NonNull;
+import nbp.task.task.nbp.enums.NbpTables;
+import nbp.task.task.nbp.exceptions.CannotExtractDataFromResponseBodyException;
+import nbp.task.task.nbp.exceptions.ResponseIsNotSuccessfulException;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import pl.kurs.nbp.enums.NbpTables;
-import pl.kurs.nbp.exceptions.CannotExtractDataFromResponseBodyException;
-import pl.kurs.nbp.exceptions.ResponseIsNotSuccessfulException;
 
 import java.io.IOException;
 import java.time.LocalDate;

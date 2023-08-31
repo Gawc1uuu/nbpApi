@@ -1,6 +1,6 @@
-package pl.kurs.cars.service;
+package books.task.cars.service;
 
-import pl.kurs.cars.model.Car;
+import books.task.cars.model.Car;
 
 
 import java.util.*;
