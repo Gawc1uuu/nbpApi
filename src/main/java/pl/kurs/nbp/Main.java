@@ -1,11 +1,9 @@
-package nbp.task;
+package pl.kurs.nbp.task;
 
-import nbp.task.service.CurrencyService;
-import nbp.task.service.NbpApiService;
+import pl.kurs.nbp.task.services.CurrencyService;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Main {
     // http://api.nbp.pl/api/exchangerates/rates/c/usd/2016-04-04/?format=json
@@ -21,8 +19,7 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        NbpApiService nbpApiService = new NbpApiService();
-        CurrencyService service = new CurrencyService(nbpApiService);
+        CurrencyService service = new CurrencyService();
 
         System.out.println(service.findWhatIsBetterToBuyInPeriod("eur", "usd", LocalDate.of(2020, 6, 1), LocalDate.now()));
 //        System.out.println(service.fetchExchangeRateForCurrencyForDate("usd", LocalDate.now()));

@@ -1,4 +1,4 @@
-package nbp.task.exceptions;
+package pl.kurs.nbp.task.exceptions;
 
 public class EmptyListException extends RuntimeException{
     public EmptyListException() {

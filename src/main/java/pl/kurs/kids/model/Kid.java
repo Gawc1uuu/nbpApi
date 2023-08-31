@@ -1,4 +1,4 @@
-package pl.kurs.model;
+package pl2.kurs.model;
 
 public class Kid {
     private String firstName;

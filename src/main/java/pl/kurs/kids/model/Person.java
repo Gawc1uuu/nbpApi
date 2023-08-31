@@ -1,4 +1,4 @@
-package pl.kurs.model;
+package pl2.kurs.model;
 
 import java.util.List;
 
