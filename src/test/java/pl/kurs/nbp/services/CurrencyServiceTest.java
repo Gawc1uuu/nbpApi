@@ -1,7 +1,7 @@
-package nbp.task.services;
+package pl.kurs.nbp.services;
 
-import pl.kurs.nbp.task.enums.Currency;
-import pl.kurs.nbp.task.exceptions.EmptyListException;
+import pl.kurs.nbp.enums.Currency;
+import pl.kurs.nbp.exceptions.EmptyListException;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -9,8 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import pl.kurs.nbp.task.services.CurrencyService;
-import pl.kurs.nbp.task.services.NbpApiService;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -20,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.doReturn;
 
 public class CurrencyServiceTest {
 

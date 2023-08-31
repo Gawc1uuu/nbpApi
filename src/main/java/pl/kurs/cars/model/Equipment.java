@@ -1,4 +1,4 @@
-package task.model;
+package pl.kurs.cars.model;
 
 import lombok.*;
 

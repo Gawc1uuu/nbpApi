@@ -1,10 +1,10 @@
-package pl2.kurs;
+package pl.kurs.kids;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
-import pl2.kurs.model.Kid;
-import pl2.kurs.model.Person;
+import pl.kurs.kids.model.Kid;
+import pl.kurs.kids.model.Person;
 
 import java.io.File;
 import java.util.List;

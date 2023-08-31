@@ -1,9 +1,9 @@
-package task;
+package pl.kurs.cars;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
-import task.model.Car;
-import task.service.CarService;
+import pl.kurs.cars.model.Car;
+import pl.kurs.cars.service.CarService;
 
 import java.io.File;
 import java.util.ArrayList;

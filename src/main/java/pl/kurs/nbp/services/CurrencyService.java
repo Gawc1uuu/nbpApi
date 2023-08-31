@@ -1,7 +1,7 @@
-package pl.kurs.nbp.task.services;
+package pl.kurs.nbp.services;
 
-import pl.kurs.nbp.task.enums.Currency;
-import pl.kurs.nbp.task.exceptions.EmptyListException;
+import pl.kurs.nbp.exceptions.EmptyListException;
+import pl.kurs.nbp.enums.Currency;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

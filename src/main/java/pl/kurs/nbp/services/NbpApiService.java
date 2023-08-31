@@ -1,14 +1,15 @@
-package pl.kurs.nbp.task.services;
+package pl.kurs.nbp.services;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NonNull;
-import pl.kurs.nbp.task.enums.NbpTables;
-import pl.kurs.nbp.task.exceptions.ResponseIsNotSuccessfulException;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import pl.kurs.nbp.enums.NbpTables;
+import pl.kurs.nbp.exceptions.CannotExtractDataFromResponseBodyException;
+import pl.kurs.nbp.exceptions.ResponseIsNotSuccessfulException;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -31,16 +32,15 @@ public class NbpApiService {
     public double getLastRateForADate(@NonNull String currency, @NonNull LocalDate newDate) {
         HttpUrl httpUrl = createHttpUrlForRates(currency.toLowerCase(), newDate, NbpTables.A.getTableName());
         Request request = createRequest(httpUrl);
-        try (Response response = okHttpClient.newCall(request).execute()) {
-            if (response.isSuccessful()) {
-                String res = response.body().string();
-                JsonNode jsonNode = mapper.readTree(res);
-                return jsonNode.get("rates").get(0).get("mid").asDouble();
-            } else {
-                throw new ResponseIsNotSuccessfulException();
-            }
+        Response response = createRequest(request);
+
+        try {
+            String res = response.body().string();
+            JsonNode jsonNode = mapper.readTree(res);
+            return jsonNode.get("rates").get(0).get("mid").asDouble();
+
         } catch (IOException e) {
-            throw new ResponseIsNotSuccessfulException(e.toString());
+            throw new CannotExtractDataFromResponseBodyException(e.toString());
         }
     }
 
@@ -48,25 +48,36 @@ public class NbpApiService {
         HttpUrl httpUrl = createHttpUrlForLastDays(currency.toLowerCase(), String.valueOf(days), NbpTables.A.getTableName());
         Request request = createRequest(httpUrl);
 
+        Response response = createRequest(request);
+
+        try {
+            String res = response.body().string();
+            JsonNode jsonNode = mapper.readTree(res);
+            List<Double> list = new ArrayList<>();
+            System.out.println(jsonNode.get("rates"));
+            for (JsonNode node : jsonNode.get("rates")) {
+                double rate = node.get("mid").asDouble();
+                list.add(rate);
+            }
+            System.out.println(list);
+            return list;
+        } catch (IOException e) {
+            throw new CannotExtractDataFromResponseBodyException(e.toString());
+        }
+    }
+
+
+    private Response createRequest(Request request) {
         try (Response response = okHttpClient.newCall(request).execute()) {
             if (response.isSuccessful()) {
-                String res = response.body().string();
-                ObjectMapper mapper = new ObjectMapper();
-                JsonNode jsonNode = mapper.readTree(res);
-                List<Double> list = new ArrayList<>();
-                System.out.println(jsonNode.get("rates"));
-                for (JsonNode node : jsonNode.get("rates")) {
-                    double rate = node.get("mid").asDouble();
-                    list.add(rate);
-                }
-                System.out.println(list);
-                return list;
+                return response;
             } else {
                 throw new ResponseIsNotSuccessfulException();
             }
         } catch (IOException e) {
             throw new ResponseIsNotSuccessfulException(e.toString());
         }
+
     }
 
     private HttpUrl createHttpUrlForLastDays(String currency, String days, String table) {
